@@ -6,6 +6,7 @@ const theBoard = ["?", "?", "?", "?", "?", "?", "?", "?", "?"];
 
 const App = () => {
   const [board, setBoard] = useState(theBoard);
+  const [counter, setCounter] = useState(5);
 
   const [treasureLocation, setTreasureLocation] = useState(
     Math.floor(Math.random() * board.length)
@@ -33,6 +34,7 @@ const App = () => {
     } else {
       updatedBoard[index] = "🌴";
       setBoard(updatedBoard);
+      setCounter((prev) => prev - 1);
     }
   };
 
@@ -45,6 +47,7 @@ const App = () => {
   return (
     <>
       <h1>Treasure Hunt Game</h1>
+      <p className="text-center">Remaining Guesses: {counter}</p>
       <div className="gameboard">
         {board.map((square, index) => (
           <Square
