@@ -40,7 +40,7 @@ const App = () => {
       setTimeout(function () {
         alert("You Win the Game!");
         restart();
-      }, 1000);
+      }, 200);
     } else if (bombLocation === index) {
       if (counter === 0) {
         alert("Sorry, you ran out of turns, you lose the Game!");
@@ -53,7 +53,7 @@ const App = () => {
       setTimeout(function () {
         alert("You Lose the Game!");
         restart();
-      }, 1000);
+      }, 200);
     } else {
       updatedBoard[index] = "🌴";
       setBoard(updatedBoard);
@@ -77,9 +77,11 @@ const App = () => {
   };
 
   return (
-    <>
-      <h1>Treasure Hunt Game</h1>
-      <p className="text-center">Remaining Guesses: {counter}</p>
+    <div className="bg-dark text-light pb-5">
+      <h1 className="text-danger">Treasure Hunt Game</h1>
+      <p className="text-center">
+        Remaining Guesses: <span className="text-danger">{counter}</span>
+      </p>
       <div className="gameboard">
         {board.map((square, index) => (
           <Square
@@ -92,11 +94,11 @@ const App = () => {
       </div>
       <button
         onClick={restart}
-        className="btn btn-dark d-block w-50 m-auto my-5"
+        className="btn btn-light d-block w-50 m-auto my-5"
       >
         Restart
       </button>
-    </>
+    </div>
   );
 };
 
