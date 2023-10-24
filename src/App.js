@@ -29,6 +29,11 @@ const App = () => {
     // alert(index);
     let updatedBoard = [...board];
     if (treasureLocation === index) {
+      if (counter === 0) {
+        alert("Sorry, you ran out of turns, you lose the Game!");
+        restart();
+        return;
+      }
       updatedBoard[index] = "💎";
       setBoard(updatedBoard);
 
@@ -37,6 +42,11 @@ const App = () => {
         restart();
       }, 1000);
     } else if (bombLocation === index) {
+      if (counter === 0) {
+        alert("Sorry, you ran out of turns, you lose the Game!");
+        restart();
+        return;
+      }
       updatedBoard[index] = "💣";
       setBoard(updatedBoard);
 
