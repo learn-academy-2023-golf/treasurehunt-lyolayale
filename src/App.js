@@ -15,6 +15,9 @@ const App = () => {
     Math.floor(Math.random() * board.length)
   );
 
+  if (treasureLocation === bombLocation)
+    setTreasureLocation(Math.floor(Math.random() * board.length));
+
   console.log(
     "Treasure Location:",
     treasureLocation,
