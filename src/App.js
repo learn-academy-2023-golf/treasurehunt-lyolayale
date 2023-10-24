@@ -28,11 +28,19 @@ const App = () => {
     if (treasureLocation === index) {
       updatedBoard[index] = "💎";
       setBoard(updatedBoard);
-      alert("You Win the Game!");
-      restart();
+
+      setTimeout(function () {
+        alert("You Win the Game!");
+        restart();
+      }, 1000);
     } else if (bombLocation === index) {
       updatedBoard[index] = "💣";
       setBoard(updatedBoard);
+
+      setTimeout(function () {
+        alert("You Lose the Game!");
+        restart();
+      }, 1000);
     } else {
       updatedBoard[index] = "🌴";
       setBoard(updatedBoard);
@@ -44,6 +52,7 @@ const App = () => {
     setBoard(theBoard);
     setTreasureLocation(Math.floor(Math.random() * board.length));
     setBombLocation(Math.floor(Math.random() * board.length));
+    setCounter(5);
   };
 
   return (
