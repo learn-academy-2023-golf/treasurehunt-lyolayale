@@ -28,6 +28,8 @@ const App = () => {
     if (treasureLocation === index) {
       updatedBoard[index] = "💎";
       setBoard(updatedBoard);
+      alert("You Win the Game!");
+      restart();
     } else if (bombLocation === index) {
       updatedBoard[index] = "💣";
       setBoard(updatedBoard);
