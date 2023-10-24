@@ -1,10 +1,10 @@
-import React from "react"
+import React from "react";
 
-const Square = () => {
+const Square = (props) => {
   return (
     <>
-      <div className="square"></div>
+      <div className="square">{props.square}</div>
     </>
-  )
-}
-export default Square
+  );
+};
+export default Square;
