@@ -44,7 +44,15 @@ const App = () => {
     } else {
       updatedBoard[index] = "🌴";
       setBoard(updatedBoard);
-      setCounter((prev) => prev - 1);
+      setCounter((prev) => {
+        if (prev > 0) {
+          return prev - 1;
+        }
+      });
+    }
+    if (counter === 0) {
+      alert("Sorry, you ran out of turns, you lose the Game!");
+      restart();
     }
   };
 
